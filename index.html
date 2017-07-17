@@ -2,49 +2,78 @@
 <html>
 <head>
 	<title>Will Ferrell Trivia</title>
+	<!-- Bootstrap -->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
+	<!-- FOnts -->
+	<link href="https://fonts.googleapis.com/css?family=Chango|Erica+One|Modak|Sigmar+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One|Merriweather|Oswald|PT+Serif" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top">
-  	<div class="container">
-    	<h1>Time Remaining: 0:55</h1>
-  	</div>
-</nav>
 
 <div class="container">
-	<div class="jumbotron">
-		<h1>Will Ferrell Trivia!!</h1>
-	</div>
 
 	<div class="panel panel-default col-lg-offset-1 col-lg-10">
 		<div class="panel-body">
+			<h1>Will Ferrell Trivia</h1>
+
+			<br>
+			<br>
+
+			<h2>Time Remaining: <span id="gameTimer"></span> seconds</h2>
+				
+			<br>
+			<br>
+
 			<h2>Which actor won MTV's movie awards best kiss with Well Ferrell in 2007?</h2>
-			Sacha Baron Cohen Talladega Nights
+			<form>
+				<input type="radio" name="kiss" value="wrong"><span>John C Reilly</span> <br>
+				<input type="radio" name="kiss" value="correct"><span>Sacha Baron Cohen</span> <br>
+				<input type="radio" name="kiss" value="wrong"><span>Mark Walberg</span> <br>
+				<input type="radio" name="kiss" value="wrong"><span>Diego Luna</span> <br>
+			</form>
 			<br>
 			<br>
 
 			<h2>What is Will Ferrell's first name?</h2>
-			John
-
+			<form>
+				<input type="radio" name="name" value="correct"><span>John</span> <br>
+				<input type="radio" name="name" value="wrong"><span>Ronald</span> <br>
+				<input type="radio" name="name" value="wrong"><span>William</span> <br>
+				<input type="radio" name="name" value="wrong"><span>Armando</span> <br>
+			</form>
 			<br>
 			<br>
 
 			<h2>What award show has Will Ferrell been nominated for the most?</h2>
-			Teen Choice Award
-
+			<form>
+				<input type="radio" name="award" value="wrong"><span>Emmy Awards</span> <br>
+				<input type="radio" name="award" value="wrong"><span>MTV Movie Awards</span> <br>
+				<input type="radio" name="award" value="correct"><span>Teen Choice Awards</span> <br>
+				<input type="radio" name="award" value="wrong"><span>Golden Globe Awards</span> <br>
+			</form>
 			<br>
 			<br>
 
 			<h2>Which of the movies he has starred in came out in 2008?</h2>
-			Step Brothers
+			<form>
+				<input type="radio" name="2008movie" value="wrong"><span>The Other Guys</span> <br>
+				<input type="radio" name="2008movie" value="correct"><span>Step Brothers</span> <br>
+				<input type="radio" name="2008movie" value="wrong"><span>Casa De Mi Padre</span> <br>
+				<input type="radio" name="2008movie" value="wrong"><span>Megamind</span> <br>
+			</form>
 
 			<br>
 			<br>
 
 			<h2>Of the following movies which movie has Will Ferrell NOT been a voice actor in?</h2>
-			Megamind, Lego Movie, Curious George
+			<form>
+				<input type="radio" name="voiceActor" value="wrong"><span>Megamind</span> <br>
+				<input type="radio" name="voiceActor" value="correct"><span>Toy Story 3</span> <br>
+				<input type="radio" name="voiceActor" value="wrong"><span>Lego Movie</span> <br>
+				<input type="radio" name="voiceActor" value="wrong"><span>Curious George</span> <br>
+			</form>
 		</div>
 	</div>
 
