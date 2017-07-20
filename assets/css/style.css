@@ -31,4 +31,23 @@ span {
 	color: #800020;
 	font-family: "Sigmar One", Modak, Chango, Erica One;
 	font-size: 50px;
+	text-align: center;
+}
+h3 {
+	text-align: center;
+	color: #800020;
+	font-family: "Fjalla One", Merriweather,Oswald, PT Serif;
+	margin-left: 25px;
+	font-size: 21px;
+}
+.jumbotron {
+	margin-top: 25px;
+	background-image: url(../images/wfimg.jpg);
+}
+.btn {
+	background-color: #800020;
+	color: white;
+	font-family: "Fjalla One", Merriweather,Oswald, PT Serif;
+	font-size: 50px;
+
 }
