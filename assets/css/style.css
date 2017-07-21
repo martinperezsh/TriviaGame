@@ -43,11 +43,12 @@ h3 {
 .jumbotron {
 	margin-top: 25px;
 	background-image: url(../images/wfimg.jpg);
+	height: 500px;
 }
 .btn {
 	background-color: #800020;
 	color: white;
 	font-family: "Fjalla One", Merriweather,Oswald, PT Serif;
 	font-size: 50px;
-
+	margin-top: 30px;
 }

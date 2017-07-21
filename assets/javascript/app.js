@@ -4,11 +4,12 @@ var rightAnswers = 0;
 var wrongAnswers = 0;
 var intervalId;
 // getting value of radio buttons
-var valq1 = $('input:radio[name=q1]:checked').val();
-var valq2 = $('input:radio[name=q2]:checked').val();
-var valq3 = $('input:radio[name=q3]:checked').val();
-var valq4 = $('input:radio[name=q4]:checked').val();
-var valq5 = $('input:radio[name=q5]:checked').val();
+var valq1 = $('input[name=q1]:checked').val();
+var valq2 = $('input[name=q2]:checked').val();
+var valq3 = $('input[name=q3]:checked').val();
+var valq4 = $('input[name=q4]:checked').val();
+var valq5 = $('input[name=q5]:checked').val();
+
 
 
 //------------------------------------------- Start game -------------------------------------
@@ -42,14 +43,16 @@ $( document ).ready(function() {
   
 //   Adds up the score
   function score(){
+  	console.log(valq1);
     if (valq1 === 1) {
       rightAnswers++;
+      console.log(valq1);
     } else {
       wrongAnswers++;
     }
     if (valq2 === 1) {
       rightAnswers++;
-    } else {
+    } else  {
       wrongAnswers++;
     }
     if (valq3 === 1) {
@@ -73,7 +76,9 @@ $( document ).ready(function() {
   }
 
 // Display score after game
+
+    score();
+  
     $("#rightAnswers").html(rightAnswers);
     $("#wrongAnswers").html(wrongAnswers);
-  
 });
