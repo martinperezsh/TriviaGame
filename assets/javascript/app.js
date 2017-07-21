@@ -24,6 +24,13 @@ $( document ).ready(function() {
     $(".container").show();
     intervalId = setInterval(decrement, 1000);
   });
+
+  $("#submit").on("click", function () {
+
+    score();
+  })
+
+
   
 	
 
@@ -37,6 +44,7 @@ $( document ).ready(function() {
 		if (timer === 0) {
 			$(".container").hide();
       $("#scoreScreen").show();
+      score();
 		}
 	
   }
