@@ -1,92 +1,104 @@
-// Starting at 31 because 30 wont appear on screen if its 30
-var timer = 31;
-var rightAnswers = 0;
-var wrongAnswers = 0;
-var intervalId;
-// getting value of radio buttons
-var valq1 = $('input[name=q1]:checked').val();
-var valq2 = $('input[name=q2]:checked').val();
-var valq3 = $('input[name=q3]:checked').val();
-var valq4 = $('input[name=q4]:checked').val();
-var valq5 = $('input[name=q5]:checked').val();
+
+// Start game on click
+$('#start').on("click", function() {
+  game.start();
+})
 
 
-
-//------------------------------------------- Start game -------------------------------------
-$( document ).ready(function() {
-// Makes it only show the start screen
-  $(".container").hide();
-  $("#scoreScreen").hide();
-  
-// Starts the trivia
-  $(".btn").on("click", function(){
-    $("#startScreen").hide();
-    $(".container").show();
-    intervalId = setInterval(decrement, 1000);
-  });
-
-  $("#submit").on("click", function () {
-
-    score();
-  })
-
-
-  
-	
-
-// Countdonw Timer
-	function decrement() {
-		timer--;
-
-		$("#gameTimer").html(timer)
-
-// Ends game and shows score
-		if (timer === 0) {
-			$(".container").hide();
-      $("#scoreScreen").show();
-      score();
-		}
-	
-  }
-  
-//   Adds up the score
-  function score(){
-  	console.log(valq1);
-    if (valq1 === 1) {
-      rightAnswers++;
-      console.log(valq1);
-    } else {
-      wrongAnswers++;
+var questions = [{
+  question: "Which actor won MTV's movie awards best kiss with Well Ferrell in 2007?",
+  answers:["John C Reilley", "Sasha Baron Cohen", "Mark Walberg", "Jon Heder"],
+  correctAnswer: "Sasha Baron Cohen"
+}, {
+  question: "What is Will Ferrell's first name?",
+  answers:["John", "Ronald", "William", "Armando"],
+  correctAnswer: "John"
+}, {
+  question: "What award show has Will Ferrell been nominated for the most?",
+  answers:["Emmy Awards", "MTV Movie Awards", "Teen Choice Awards", "Golden Globe Awards"],
+  correctAnswer: "Teen Choice Awards"
+}, {
+  question: "Which of the movies he has starred in came out in 2008?",
+  answers:["The Other Guys", "Step Brothers", "Casa De Mi Padre", "Blades of Glory"],
+  correctAnswer: "Step Brothers"
+}, {
+  question: "Of the following movies which movie has Will Ferrell NOT been a voice actor in?",
+  answers:["Megamind", "Toy Story 3", "The Lego Movie", "Curious George"],
+  correctAnswer: "Toy Story 3"
+}];
+   
+var game = {
+  correct: 0,
+  incorrect: 0,
+  counter: 30,
+  countdown: function() {
+    game.counter--;
+    $('#counter').html(game.counter);
+    if(game.counter === 0){
+      game.done();
     }
-    if (valq2 === 1) {
-      rightAnswers++;
-    } else  {
-      wrongAnswers++;
+  },
+  start: function(){
+//timer decrease time by 1 second
+    timer = setInterval(game.countdown, 1000);
+// Put timer in html
+    $('#subwrapper').prepend('<h2> Time Remaining: <span id="counter">30</span> Seconds </h2>')
+// remove start button
+    $('#start').remove();
+// Put the questions and answers in the html
+    for (var i =0; i < questions.length; i++){
+      $('#subwrapper').append('<h2>' + questions[i].question + '</h2>')
+      for (var j = 0; j < questions[i].answers.length; j++){
+        $('#subwrapper').append('<input type="radio" name="question-' + i + '" value="' + questions[i].answers[j] + '">' + questions[i].answers[j])
+      }
     }
-    if (valq3 === 1) {
-      rightAnswers++;
-    } else {
-      wrongAnswers++;
-    }
-    if (valq4 === 1) {
-      rightAnswers++;
-    } else {
-      wrongAnswers++;
-    }
-    if (valq5 === 1) {
-      rightAnswers++;
-    } else {
-      wrongAnswers++;
-    }
+  },
+  done: function(){
+    $.each($('input[name="question-0"]:checked'), function(){
+      if($(this).val() === questions[0].correctAnswer){
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+    });
+    $.each($('input[name="question-1"]:checked'), function(){
+     if($(this).val() === questions[1].correctAnswer){
+       game.correct++;
+     } else {
+       game.incorrect++;
+     }
+   });
+   $.each($('input[name="question-2"]:checked'), function(){
+     if($(this).val() === questions[2].correctAnswer){
+       game.correct++;
+     } else {
+       game.incorrect++;
+     }
+   });
+   $.each($('input[name="question-3"]:checked'), function(){
+      if($(this).val() === questions[3].correctAnswer){
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+   });
+   $.each($('input[name="question-4"]:checked'), function(){
+      if($(this).val() === questions[4].correctAnswer){
+        game.correct++;
+      } else {
+        game.incorrect++;
+      }
+   });
     
-   console.log(rightAnswers + " correct");
-   console.log(wrongAnswers + " wrong");
+   this.result();
+  },
+  result: function(){
+    clearInterval(timer);
+    $('#subwrapper h2').remove();
+    $('#subwrapper').html('<h2>Trivia Completed!</h2>');
+    $('#subwrapper').append('<h3>Correct Answers: ' + this.correct + '</h3>');
+    $('#subwrapper').append('<h3>Inorrect Answers: ' + this.incorrect + '</h3>');
+    $('#subwrapper').append('<h3>Unanswered: ' +(questions.length - (this.incorrect + this.correct)) + '</h3>');
   }
-
-// Display score after game
-
-    score();
-  
-    $("#rightAnswers").html(rightAnswers);
-    $("#wrongAnswers").html(wrongAnswers);
-});
+//  closes game function 
+};

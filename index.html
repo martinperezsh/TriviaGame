@@ -12,95 +12,15 @@
 </head>
 <body>
 
-	<div class="jumbotron" id="startScreen">
-  
-    	<h1>Will Ferrell Trivia</h1>
-  
-    	<button class="btn btn-default col-lg-offset-5 col-lg-2">Start</button>
-	</div>
-
-<!-- Trivia game container -->
-<div class="container">
-
-	<div class="panel panel-default col-lg-offset-1 col-lg-10">
-		<div class="panel-body">
-			<h1>Will Ferrell Trivia</h1>
-
-			<br>
-			<br>
-<!-- Timer -->
-			<h2>Time Remaining: <span id="gameTimer"></span> seconds</h2>
-				
-			<br>
-			<br>
-      
-      <form id="qs" name="qs">
-
-			<h2>Which actor won MTV's movie awards best kiss with Well Ferrell in 2007?</h2>
-			
-				<input type="radio" name="q1" value="0"><span>John C Reilly</span> <br>
-				<input type="radio" name="q1" value="1"><span>Sacha Baron Cohen</span> <br>
-				<input type="radio" name="q1" value="0"><span>Mark Walberg</span> <br>
-				<input type="radio" name="q1" value="0"><span>Diego Luna</span> <br>
-			
-			<br>
-			<br>
-
-			<h2>What is Will Ferrell's first name?</h2>
-			
-				<input type="radio" name="q2" value="1"><span>John</span> <br>
-				<input type="radio" name="q2" value="0"><span>Ronald</span> <br>
-				<input type="radio" name="q2" value="0"><span>William</span> <br>
-				<input type="radio" name="q2" value="0"><span>Armando</span> <br>
-			
-			<br>
-			<br>
-
-			<h2>What award show has Will Ferrell been nominated for the most?</h2>
-			
-				<input type="radio" name="q3" value="0"><span>Emmy Awards</span> <br>
-				<input type="radio" name="q3" value="0"><span>MTV Movie Awards</span> <br>
-				<input type="radio" name="q3" value="1"><span>Teen Choice Awards</span> <br>
-				<input type="radio" name="q3" value="0"><span>Golden Globe Awards</span> <br>
-			
-			<br>
-			<br>
-
-			<h2>Which of the movies he has starred in came out in 2008?</h2>
-			
-				<input type="radio" name="q4" value="0"><span>The Other Guys</span> <br>
-				<input type="radio" name="q4" value="1"><span>Step Brothers</span> <br>
-				<input type="radio" name="q4" value="0"><span>Casa De Mi Padre</span> <br>
-				<input type="radio" name="q4" value="0"><span>Megamind</span> <br>
-			
-
-			<br>
-			<br>
-
-			<h2>Of the following movies which movie has Will Ferrell NOT been a voice actor in?</h2>
-			
-				<input type="radio" name="q5" value="0"><span>Megamind</span> <br>
-				<input type="radio" name="q5" value="1"><span>Toy Story 3</span> <br>
-				<input type="radio" name="q5" value="0"><span>Lego Movie</span> <br>
-				<input type="radio" name="q5" value="0"><span>Curious George</span> <br>
-
-				<input type="submit" id="submit">
-			</form>
-      
-      
+	<div class="container">
+		<div class="panel panel-default col-lg-offset-1 col-lg-10">
+			<div class="panel-body">
+				<h1 id="title">Will Ferrell Trivia</h1>
+		     		<div id="subwrapper">
+		        		<button class="btn btn-default col-lg-2 col-lg-offset-5" id="start">Start</button>
+		    		</div>
+			</div>
 		</div>
-	</div>
-
-	</div>
-
-	<!-- Score Screen -->
-	<div class="jumbotron" id="scoreScreen">
-	  <h1>Will Ferrell Trivia</h1>
-	  <br>
-	  <br>
-	  
-	  <h3>Correct Answers: <span id="rightAnswers"></span></h2>
-	  <h3>Wrong Answers: <span id="wrongAnswers"></span></h2>
 	</div>
 
 
